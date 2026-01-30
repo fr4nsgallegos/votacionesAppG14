@@ -76,6 +76,16 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
                 child: Text("Regístrate"),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  AuthService.loginWithEmailAndPassword(
+                    _emailController.text,
+                    _passwordController.text,
+                    context,
+                  );
+                },
+                child: Text("Iniciar sesión "),
+              ),
             ],
           ),
         ),
