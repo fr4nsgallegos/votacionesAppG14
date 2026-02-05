@@ -218,7 +218,10 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Text("ó inicia sesión con: "),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            final authservice = AuthService();
+                            authservice.getGoogleAccount();
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: CircleBorder(),
                           ),
