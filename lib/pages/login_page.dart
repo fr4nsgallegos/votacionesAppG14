@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:votacionesappg14/pages/register_page.dart';
+import 'package:votacionesappg14/services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -167,7 +168,13 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          AuthService.loginWithEmailAndPassword(
+                            _emailController.text,
+                            _passwordController.text,
+                            context,
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                             horizontal: 100,
